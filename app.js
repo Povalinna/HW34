@@ -16,8 +16,8 @@ class Student {
 
         this.results = {
             bad: "Редиска!",
-            normal: "Добре,але можно лучше",
-            good: "молодець!"
+            normal: "Добре,але можно краще",
+            good: "Молодець!"
         };
     }
     absent() {
