@@ -78,9 +78,11 @@ student.present();
 student.present();
 student.present();
 student.present();
-// student.present();
-// student.present();
-//student.present();
+ student.present();
+ student.present();
+student.present();
+student.present()
+student.present()
 student.summary();
 let studentOne = new Student("Mark", "Ivanov", "2001", [80, 76, 89, 66, 95, 70]);
 console.log(studentOne);
@@ -106,3 +108,12 @@ studentTwo.present();
 studentTwo.present();
 studentTwo.absent();
 studentTwo.summary();
+let studentThird=new Student("George","Bely","2000",[70,60,70,80,70]);
+console.log(studentThird);
+studentThird.absent();
+studentThird.absent();
+studentThird.absent();
+studentThird.absent();
+studentThird.absent();
+studentThird.present();
+studentThird.summary();
