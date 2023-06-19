@@ -5,7 +5,7 @@ class Student {
         this.yearBirthday = yearBirthday;
         this.marks = marks;
 
-        this.allaverageMarks = this.averageMarks();
+        this.allAverageMarks = this.averageMarks();
         this.age = this.fullAgeStudent(yearBirthday);
         this.averageRating = 90;
         this.averageNumberVisits = 0.9;
@@ -16,7 +16,7 @@ class Student {
 
         this.results = {
             bad: "Редиска!",
-            normal: "Добре,але можно краще",
+            normal: "Добре,але можнa краще",
             good: "Молодець!"
         };
     }
@@ -35,7 +35,7 @@ class Student {
         let visitsCount = this.visits.filter(x => x);
         let visitsCountIndex = visitsCount.length;
         // let index=this.visitsIndex;
-        return this.visits.length / this.visitsIndex;
+        return visitsCountIndex / this.visitsIndex;
     }
 
     fullAgeStudent(yearBirthday) {
@@ -54,7 +54,7 @@ class Student {
         return allAverageMarks;
     }
     summary() {
-        console.log(this.allaverageMarks);
+        console.log(this.allAverageMarks);
         console.log(this.averageRating);
         console.log(this.avarageVisits);
         console.log(this.averageNumberVisits);
@@ -64,8 +64,7 @@ class Student {
         else
             if (this.allAverageMarks > this.averageRating && this.averageVisits > this.averageNumberVisits) { console.log(this.results.good); }
             else
-                (this.allAverageMarks < this.averageRating || this.averageVisits < this.averageNumberVisits)
-        { console.log(this.results.normal); }
+                 { console.log(this.results.normal); }
     }
 }
 
