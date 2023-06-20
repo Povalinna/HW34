@@ -5,19 +5,19 @@ class Student {
         this.yearBirthday = yearBirthday;
         this.marks = marks;
 
-        this.allAverageMarks = this.averageMarks();
+        this.allAverageMarks = marks.reduce((acc, number) => acc + number, 0) / marks.length;
         this.age = this.fullAgeStudent(yearBirthday);
         this.averageRating = 90;
-        this.averageNumberVisits = 0.9;
+        this.numberVisits = 0.9;
 
         this.visits = [];
         this.visits.length = 25;
         this.visitsIndex = 0;
 
-        this.results = {
+        this.result = {
             bad: "Редиска!",
-            normal: "Добре,але можнa краще",
-            good: "Молодець!"
+            normal: "Добре,але можна краще",
+            good: "молодець!"
         };
     }
     absent() {
@@ -30,12 +30,20 @@ class Student {
     }
 
 
-    get avarageVisits() {
+    get allAvarageVisits() {
 
         let visitsCount = this.visits.filter(x => x);
+        console.log(visitsCount);
+        let index = this.visitsIndex;
+        console.log(index);
         let visitsCountIndex = visitsCount.length;
-        // let index=this.visitsIndex;
-        return visitsCountIndex / this.visitsIndex;
+        console.log(visitsCountIndex);
+
+        console.log(visitsCountIndex / index);
+        return visitsCountIndex / index;
+        (console.log(allAverageVisits));
+
+
     }
 
     fullAgeStudent(yearBirthday) {
@@ -43,30 +51,30 @@ class Student {
         let age = yearToday.getFullYear() - this.yearBirthday;
         return age;
     }
-    averageMarks() {
-        let sum = 0;
-        console.log(this.marks.length);
-        for (let i = 0; i < this.marks.length; i++) {
-            sum = sum + this.marks[i];
-        }
-        let allAverageMarks = sum / this.marks.length;
-        console.log(allAverageMarks);
-        return allAverageMarks;
-    }
-    summary() {
-        console.log(this.allAverageMarks);
-        console.log(this.averageRating);
-        console.log(this.avarageVisits);
-        console.log(this.averageNumberVisits);
 
-        if (this.allAverageMarks < this.averageRating && this.averageVisits < this.averageNumberVisits)
-            (console.log(this.results.bad))
-        else
-            if (this.allAverageMarks > this.averageRating && this.averageVisits > this.averageNumberVisits) { console.log(this.results.good); }
-            else
-                 { console.log(this.results.normal); }
+    summary() {
+        console.log(this.allAverageMarks, this.averageRating);
+
+        console.log(this.allAvarageVisits, this.numberVisits);
+
+
+        switch (true) {
+            case ((this.allAverageMarks < this.averageRating) && (this.allAvarageVisits < this.numberVisits)):
+
+                console.log(this.result.bad);
+                break;
+
+            case ((this.allAverageMarks > this.averageRating) || (this.allAverageVisits > this.numberVisits)):
+
+                console.log(this.result.good);
+                break;
+            default:
+
+                console.log(this.result.normal)
+        }
     }
 }
+
 
 let student = new Student("Anna", "Popova", "2003", [90, 99, 89, 99, 95]);
 console.log(student);
@@ -78,11 +86,10 @@ student.present();
 student.present();
 student.present();
 student.present();
- student.present();
- student.present();
 student.present();
-student.present()
-student.present()
+student.present();
+student.present();
+student.present();
 student.summary();
 let studentOne = new Student("Mark", "Ivanov", "2001", [80, 76, 89, 66, 95, 70]);
 console.log(studentOne);
@@ -108,7 +115,7 @@ studentTwo.present();
 studentTwo.present();
 studentTwo.absent();
 studentTwo.summary();
-let studentThird=new Student("George","Bely","2000",[70,60,70,80,70]);
+let studentThird = new Student("George", "Bely", "2000", [70, 60, 70, 80, 70]);
 console.log(studentThird);
 studentThird.absent();
 studentThird.absent();
@@ -117,3 +124,12 @@ studentThird.absent();
 studentThird.absent();
 studentThird.present();
 studentThird.summary();
+let studentFifs = new Student("irma", "Lisova", "1997", [90, 96, 99, 99, 99, 99]);
+studentFifs.present();
+studentFifs.present();
+studentFifs.present();
+studentFifs.present();
+studentFifs.present();
+studentFifs.present();
+studentFifs.present();
+studentFifs.summary();
